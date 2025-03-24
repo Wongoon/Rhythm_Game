@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,5 +26,13 @@ public class MoveScene : MonoBehaviour
 
     static public void ExitGame() {
         Application.Quit();
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (SceneManager.GetActiveScene().name == "StartScene") {
+                ExitGame();
+            }
+        }
     }
 }
